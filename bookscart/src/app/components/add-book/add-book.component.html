@@ -1,0 +1,14 @@
+<h3>Add Book</h3>
+<div class="form-el">
+  <label>Title</label>
+  <input type="text" #newBookTitle />
+</div>
+<div class="form-el">
+  <label>Author</label>
+  <input type="text" #newBookAuthor />
+</div>
+<div class="form-el">
+  <label>Price</label>
+  <input type="text" #newBookPrice />
+</div>
+<button (click)="onBookAdd(newBookTitle.value, newBookAuthor.value, newBookPrice.value)">Add</button>

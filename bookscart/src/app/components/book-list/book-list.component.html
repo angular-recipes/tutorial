@@ -1,0 +1,12 @@
+<app-cart [cart]="cart"></app-cart>
+<app-add-book (onAdd)="addBook($event)"></app-add-book>
+
+<h3>Books</h3>
+<div *ngFor="let b of books">
+    <app-book 
+        [book]="b" 
+        (onRate)="rate(b, $event)"
+        (onCartAdd)="addToCart(b)"
+    >
+    </app-book>
+</div>

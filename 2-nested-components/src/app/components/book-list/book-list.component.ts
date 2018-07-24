@@ -1,4 +1,5 @@
-import { Book } from './../models/book';
+import { Cart, Item } from './../../models/cart';
+import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -34,14 +35,40 @@ export class BookListComponent implements OnInit {
     numRatings: 0
   }];
 
+  cart: Cart = {
+    items: [],
+    totalPrice: 0
+  };
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  addBook(book: Book) {
+    this.books.unshift(book);
+  }
+
   rate(book: Book, userRating: number) {
-    book.rating = (book.rating*book.numRatings + userRating)/(book.numRatings + 1);
+    book.rating = (book.rating * book.numRatings + userRating) / (book.numRatings + 1);
     book.numRatings++;
+  }
+
+  addToCart(book: Book) {
+    let newItem = this.cart.items.find(i => i.name == book.title);
+
+    if (newItem) {
+      newItem.qty++;
+    } else {
+      let newItem: Item = {
+        name: book.title,
+        price: book.price,
+        qty: 1
+      };
+      this.cart.items.push(newItem);
+    }
+
+    this.cart.totalPrice += book.price;
   }
 
 }
