@@ -1,0 +1,36 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Alchemist",
+      "author": "Paulo Cohelo",
+      "price": 21,
+      "rating": 3.1538461538461537,
+      "numRatings": 13
+    },
+    {
+      "id": 2,
+      "title": "4 hour work week",
+      "author": "Tim Ferris",
+      "price": 52,
+      "rating": 3.4,
+      "numRatings": 5
+    },
+    {
+      "title": "White Tiger",
+      "author": "Arvind Adiga",
+      "price": 33,
+      "rating": 3,
+      "numRatings": 1,
+      "id": 3
+    },
+    {
+      "title": "Power of Now",
+      "author": "Eckhart Tolle",
+      "price": 11,
+      "rating": 0,
+      "numRatings": 0,
+      "id": 4
+    }
+  ]
+}

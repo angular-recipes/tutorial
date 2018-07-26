@@ -1,0 +1,14 @@
+<div [class.topRated]="book.rating>=4">
+  <div class="title">{{book.title | titlecase}}</div>
+  <div class="author">{{book.author}}</div>
+  <div>{{book.rating | number:'1.2-2'}}</div>
+  <div>{{book.price | currency:'INR':true:'1.1-2' }}</div>
+  <button (click)="onBookRate(1)">1</button>
+  <button (click)="onBookRate(2)">2</button>
+  <button (click)="onBookRate(3)">3</button>
+  <button (click)="onBookRate(4)">4</button>
+  <button (click)="onBookRate(5)">5</button>
+  <small> {{ book.numRatings }} ratings</small> <br/>
+  <button (click)="onAddToCart()">Add to cart</button>
+  <hr/>
+</div>

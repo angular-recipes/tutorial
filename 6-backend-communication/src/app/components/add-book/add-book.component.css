@@ -1,0 +1,25 @@
+label {
+    display: inline-block;
+    width: 70px;
+}
+.form-el {
+    padding: 3px;
+}
+button {
+    background-color: navy;
+    color: white;
+    padding: 5px 10px;
+}
+.error {
+    font-size: small;
+    color: red;
+}
+button:disabled {
+    background-color: aqua;
+}
+.ng-dirty.ng-invalid, .ng-touched.ng-invalid{
+    border-left: 4px solid red; 
+}
+.ng-valid {
+    border-left: 4px solid green;
+}

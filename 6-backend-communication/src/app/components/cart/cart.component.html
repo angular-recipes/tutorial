@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Qty</th>
+  </tr>
+  <tr *ngFor="let item of cart.items">
+    <td>{{item.name}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.qty}}</td>
+  </tr>
+  <tr>
+    <td>Total Price:</td>
+    <td colspan="2">{{cart.totalPrice}}</td>
+  </tr>
+</table>

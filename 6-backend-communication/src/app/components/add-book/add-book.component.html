@@ -1,0 +1,28 @@
+<h3>Add Book</h3>
+<form #addBookForm="ngForm" (ngSubmit)="onBookAdd(); addBookForm.reset()">
+  <div class="form-el">
+    <label>Title</label>
+    <input type="text" name="title" [(ngModel)]="newBook.title" #title="ngModel" required minlength="4"/>
+    <div class="error" *ngIf="title.invalid && title.errors.required && (title.dirty || title.touched)">
+      This field is required
+    </div>
+    <div class="error" *ngIf="title.invalid && title.errors.minlength">
+      min is {{title.errors.minlength.requiredLength}}, but you have typed {{title.errors.minlength.actualLength}}
+    </div>
+  </div>
+  <div class="form-el">
+    <label>Author</label>
+    <input type="text" name="author" [(ngModel)]="newBook.author" #author="ngModel" required/>
+    <div class="error" *ngIf="author.invalid && author.errors.required && (author.dirty || author.touched)" >
+      This field is required
+    </div>
+  </div>
+  <div class="form-el">
+    <label>Price</label>
+    <input type="text" name="price" [(ngModel)]="newBook.price" #price="ngModel" required/>
+    <div class="error" *ngIf="price.invalid && price.errors.required && (price.dirty || price.touched)">
+      This field is required
+    </div>
+  </div>
+  <button [disabled]="addBookForm.invalid" type="submit">Add</button>
+</form>
